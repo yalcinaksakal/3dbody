@@ -1,0 +1,526 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 626,
+      "max": [
+        1.4987846612930298,
+        1.5207546949386597,
+        1.20171058177948
+      ],
+      "min": [
+        -8.3971881866455078,
+        -1.5949429273605347,
+        -1.1217341423034668
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 7512,
+      "componentType": 5126,
+      "count": 626,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -0.58218419551849365
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 626,
+      "max": [
+        1,
+        0.49985635280609131,
+        0.99781036376953125,
+        1
+      ],
+      "min": [
+        -1,
+        -0.4170210063457489,
+        -0.99781030416488647,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 2880,
+      "max": [
+        625
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 15024,
+      "componentType": 5126,
+      "count": 466,
+      "max": [
+        1.5137724876403809,
+        1.1329514980316162,
+        1.5359622240066528
+      ],
+      "min": [
+        -8.4121761322021484,
+        -1.4649174213409424,
+        -1.6108922958374023
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 20616,
+      "componentType": 5126,
+      "count": 466,
+      "max": [
+        1,
+        0.58218395709991455,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 10016,
+      "componentType": 5126,
+      "count": 466,
+      "max": [
+        0.99999886751174927,
+        0.99711757898330688,
+        0.90280354022979736,
+        1
+      ],
+      "min": [
+        -0.99999880790710449,
+        -0.99711769819259644,
+        -0.89883244037628174,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 11520,
+      "componentType": 5125,
+      "count": 2304,
+      "max": [
+        465
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 26208,
+      "componentType": 5126,
+      "count": 5552,
+      "max": [
+        88.913558959960938,
+        178.505615234375,
+        20.77705192565918
+      ],
+      "min": [
+        -89.02777099609375,
+        -0.53554511070251465,
+        -10.629729270935059
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 92832,
+      "componentType": 5126,
+      "count": 5552,
+      "max": [
+        0.99997872114181519,
+        0.99948841333389282,
+        1
+      ],
+      "min": [
+        -0.99997872114181519,
+        -0.99997729063034058,
+        -0.99992799758911133
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 17472,
+      "componentType": 5126,
+      "count": 5552,
+      "max": [
+        1,
+        0.99963903427124023,
+        0.99992632865905762,
+        1
+      ],
+      "min": [
+        -1,
+        -0.9996371865272522,
+        -0.99992609024047852,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 20736,
+      "componentType": 5125,
+      "count": 27336,
+      "max": [
+        5551
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "LeighIria (https://sketchfab.com/LeighIria)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/601503e9c56b4b5eba76847128d31f6f",
+      "title": "Base Mesh Man Simple"
+    },
+    "generator": "Sketchfab-3.18.5",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 130080,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 159456,
+      "byteOffset": 130080,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 106304,
+      "byteOffset": 289536,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 395840,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "BASEMESH_WHITE",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.59999999999999998
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "BaseMesh_Man_Simple_Eyeball_BASEMESH_WHITE_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "BaseMesh_Man_Simple_EyeCornea_BASEMESH_WHITE_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TANGENT": 6
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "BaseMesh_Man_Simple_Body_BASEMESH_WHITE_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TANGENT": 10
+          },
+          "indices": 11,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "402f355a66fa4925a3f3986adf022b37.fbx"
+    },
+    {
+      "children": [
+        4,
+        7,
+        10
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.2204460492503131e-16,
+        -1,
+        0,
+        0,
+        1,
+        2.2204460492503131e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "BaseMesh_Man_Simple_Eyeball"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        1,
+        -0,
+        0,
+        0,
+        0,
+        6.123233995736766e-17,
+        1,
+        0,
+        -0,
+        -1,
+        6.123233995736766e-17,
+        0,
+        3.4492018222808838,
+        -13.520050048828125,
+        167.21327209472656,
+        1
+      ],
+      "name": ""
+    },
+    {
+      "mesh": 0,
+      "name": "BaseMesh_Man_Simple_Eyeball_BASEMESH_WHITE_0"
+    },
+    {
+      "children": [
+        8
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.2204460492503131e-16,
+        -1,
+        0,
+        0,
+        1,
+        2.2204460492503131e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "BaseMesh_Man_Simple_EyeCornea"
+    },
+    {
+      "children": [
+        9
+      ],
+      "matrix": [
+        1,
+        0,
+        -0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        3.4492018222808838,
+        -13.520058631896973,
+        167.21328735351562,
+        1
+      ],
+      "name": ""
+    },
+    {
+      "mesh": 1,
+      "name": "BaseMesh_Man_Simple_EyeCornea_BASEMESH_WHITE_0"
+    },
+    {
+      "children": [
+        11
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.2204460492503131e-16,
+        -1,
+        0,
+        0,
+        1,
+        2.2204460492503131e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "BaseMesh_Man_Simple_Body"
+    },
+    {
+      "children": [
+        12
+      ],
+      "matrix": [
+        1,
+        -0,
+        0,
+        0,
+        0,
+        6.123233995736766e-17,
+        1,
+        0,
+        -0,
+        -1,
+        6.123233995736766e-17,
+        0,
+        0.05710601806640625,
+        -6.4671039581298828e-06,
+        0.32913205027580261,
+        1
+      ],
+      "name": ""
+    },
+    {
+      "mesh": 2,
+      "name": "BaseMesh_Man_Simple_Body_BASEMESH_WHITE_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
+
