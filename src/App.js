@@ -23,17 +23,28 @@ export default function App() {
   const scrollArea = useRef();
   // const onScroll = e => (state.top.current = e.target.scrollTop);
   // useEffect(() => void onScroll({ target: scrollArea.current }), []);
-
+  const [clicked, setClicked] = useState(false);
   return (
-    <>
+    <div
+      style={{ width: "100%", height: "100%" }}
+      onMouseDown={e => {
+      
+        setClicked(true);
+      }}
+      onMouseUp={() => setClicked(false)}
+      onMouseMove={e => {
+        console.log(e);
+      }}
+    >
       <Header />
       {/* R3F Canvas */}
+
       <Canvas colorManagement camera={{ position: [0, 0, 120], fov: 70 }}>
         <Lights />
         <Suspense fallback={null}>
           <HtmlContent />
         </Suspense>
       </Canvas>
-    </>
+    </div>
   );
 }

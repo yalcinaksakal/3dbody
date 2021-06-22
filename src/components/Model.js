@@ -1,9 +1,16 @@
 import { useGLTFLoader } from "drei";
+import * as THREE from "three";
 import React from "react";
 const Model = ({ url = "/gltfs/female_base_mesh/scene.gltf" }) => {
-  const gltf = useGLTFLoader(url, true);
-  gltf.scene.scale.set(50, 50, 50);
-  return <primitive object={gltf.scene} dispose={null} />;
+  let { scene } = useGLTFLoader(url, true);
+  //   gltf.scene.scale.set(30, 30, 30);
+  const box = new THREE.Box3().setFromObject(scene);
+  const center = box.getCenter(new THREE.Vector3());
+  scene.position.x += scene.position.x - center.x;
+  scene.position.y += scene.position.y - center.y;
+  scene.position.z += scene.position.z - center.z;
+
+  return <primitive object={scene} dispose={null} />;
 };
 
 export default Model;
