@@ -61,7 +61,7 @@ const HtmlContent = ({ modelPath, positionY, title }) => {
             <mesh
               ref={meshRef}
               position={[0, -60, 0]}
-              scale={title==="Female"?[40, 40, 40]:[9,9,9]}
+              scale={title === "Female" ? [40, 40, 40] : [11, 11, 11]}
               onBeforeRender={() => isAutoRotating && rotate()}
             >
               <Model modelPath={modelPath} />
