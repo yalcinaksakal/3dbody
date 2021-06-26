@@ -1,5 +1,5 @@
 import { Html } from "drei";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { useRef } from "react";
 import { Canvas } from "react-three-fiber";
 // import { useFrame } from "react-three-fiber";
@@ -70,7 +70,7 @@ const HtmlContent = ({ modelPath, positionY, title }) => {
             <Html fullscreen>
               <div className="container">
                 <h1 className="title">{title}</h1>
-                <p>Hold down mouse button to rotate the model</p>
+                <p>Hold model to rotate it</p>
               </div>
             </Html>
           </group>
