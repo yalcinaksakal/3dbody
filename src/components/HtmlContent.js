@@ -1,26 +1,30 @@
 import { Html } from "drei";
 import React, { Suspense } from "react";
 import { useRef } from "react";
-// import { useFrame } from "react-three-fiber";
-import { Canvas } from "react-three-fiber";
+import { Canvas, useFrame } from "react-three-fiber";
+
 import Lights from "./Lights";
 import Model from "./Model";
 import { Section } from "./section";
 
 let isRotating = false;
+let isAutoRotating = true;
 const oldCords = { x: 0, y: 0 };
 
 const HtmlContent = () => {
   const meshRef = useRef();
 
+  // outside of the canvas context, useFrame is useless. useFrame hook is reliant on canvas context
   // useFrame(() => {
-  //   if (!isRotating) return;
-  //   meshRef.current.rotation.x += rotation.x;
-  //   meshRef.current.rotation.y += rotation.y;
-  //   // meshRef.current.position.x += 1;
-  //   // meshRef.current.position.x = meshRef.current.position.x%50;
-  //   // meshRef.current.rotation.z += 0.01;
+  //   if (!isAutoRotating) return;
+
+  //   meshRef.current.rotation.x += 0.01;
+  //   meshRef.current.rotation.y += 0.01;
   // });
+
+  const rotate = () => {
+    meshRef.current.rotation.y += 0.01;
+  };
 
   return (
     <Canvas
@@ -28,6 +32,7 @@ const HtmlContent = () => {
       camera={{ position: [0, 0, 120], fov: 70 }}
       onPointerDown={e => {
         e.stopPropagation();
+        isAutoRotating = false;
         isRotating = true;
         oldCords.x = e.clientX;
         oldCords.y = e.clientY;
@@ -45,8 +50,6 @@ const HtmlContent = () => {
           ? (meshRef.current.rotation.y += 0.05 * (xDif > 0 ? 1 : -1))
           : (meshRef.current.rotation.x += 0.05 * (yDif > 0 ? 1 : -1));
 
-        // meshRef.current.rotation.x += rotation.x;
-
         oldCords.x = x;
         oldCords.y = y;
       }}
@@ -55,13 +58,18 @@ const HtmlContent = () => {
       <Suspense fallback={null}>
         <Section factor={1.5} offset={1}>
           <group position={[0, 310, 0]}>
-            <mesh ref={meshRef} position={[0, -60, 0]} scale={[40, 40, 40]}>
+            <mesh
+              ref={meshRef}
+              position={[0, -60, 0]}
+              scale={[40, 40, 40]}
+              onBeforeRender={() => isAutoRotating && rotate()}
+            >
               <Model />
             </mesh>
 
             <Html fullscreen>
               <div className="container">
-                <h1 className="title">Hello</h1>
+                <h1 className="title">Female</h1>
                 <p>Hold down mouse button to rotate the model</p>
               </div>
             </Html>
