@@ -9,6 +9,8 @@ const Model = ({ url = "/gltfs/female_base_mesh/scene.gltf" }) => {
   scene.position.x += scene.position.x - center.x;
   scene.position.y += scene.position.y - center.y;
   scene.position.z += scene.position.z - center.z;
+  
+  // scene.rotateOnWorldAxis(new THREE.Vector3(0, 0, 0), THREE.Math.degToRad(0));
 
   return <primitive object={scene} dispose={null} />;
 };
