@@ -1,8 +1,8 @@
 import { Html } from "drei";
 import React, { Suspense } from "react";
 import { useRef } from "react";
-import { Canvas, useFrame } from "react-three-fiber";
-
+import { Canvas } from "react-three-fiber";
+// import { useFrame } from "react-three-fiber";
 import Lights from "./Lights";
 import Model from "./Model";
 import { Section } from "./section";
@@ -11,7 +11,7 @@ let isRotating = false;
 let isAutoRotating = true;
 const oldCords = { x: 0, y: 0 };
 
-const HtmlContent = () => {
+const HtmlContent = ({ modelPath, positionY, title }) => {
   const meshRef = useRef();
 
   // outside of the canvas context, useFrame is useless. useFrame hook is reliant on canvas context
@@ -61,15 +61,15 @@ const HtmlContent = () => {
             <mesh
               ref={meshRef}
               position={[0, -60, 0]}
-              scale={[40, 40, 40]}
+              scale={title==="Female"?[40, 40, 40]:[9,9,9]}
               onBeforeRender={() => isAutoRotating && rotate()}
             >
-              <Model />
+              <Model modelPath={modelPath} />
             </mesh>
 
             <Html fullscreen>
               <div className="container">
-                <h1 className="title">Female</h1>
+                <h1 className="title">{title}</h1>
                 <p>Hold down mouse button to rotate the model</p>
               </div>
             </Html>

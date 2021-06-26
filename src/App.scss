@@ -44,46 +44,7 @@ body,
   user-select: none;
 }
 
-header {
-  position: absolute;
-  font-size: 20px;
-  z-index: 99;
-  width: 100%;
-  padding: 40px 20px;
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .logo {
-      letter-spacing: 2px;
-      color: #fff;
-    }
-    nav {
-      ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        li {
-          list-style: none;
-          margin: 0 60px;
-          &.btn {
-            a {
-              color: #fff;
 
-              padding: 16px 24px;
-              border-radius: 10px;
-            }
-          }
-          a {
-            text-transform: capitalize;
-            text-decoration: none;
-            color: #fff;
-          }
-        }
-      }
-    }
-  }
-}
 
 .title {
   font-size: 3rem;
@@ -119,4 +80,24 @@ header {
 .loading-bar {
   height: 32px;
   background: #f15946;
+}
+
+button {
+  outline: none;
+  padding: 10px;
+  background: dodgerblue;
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 150px;
+  position: fixed;
+  border-radius: 5px;
+  bottom: 50px;
+  left: calc(50vw - 75px);
+  z-index: 100;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  &:hover {
+    background: rgb(124, 184, 245);
+  }
 }

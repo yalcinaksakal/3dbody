@@ -1,35 +1,35 @@
-import React, { useRef, useEffect, useState, Suspense } from "react";
+import React, { useState } from "react";
 import "./App.scss";
-//Components
-import Header from "./components/header";
 
-// Page State
-import state from "./components/state";
-
-// R3F
-import { Canvas, useFrame } from "react-three-fiber";
-import { useProgress, useGLTFLoader } from "drei";
-
-// React Spring
-import { a, useTransition } from "@react-spring/web";
-//Intersection Observer
-import { useInView } from "react-intersection-observer";
 import HtmlContent from "./components/HtmlContent";
 // import Lights from "./components/Lights";
+const models = [
+  { title: "Female", gltf: "/gltfs/female_base_mesh/scene.gltf" },
+  { title: "Male", gltf: "/gltfs/male_base_mesh2/scene.gltf" },
+];
 
 export default function App() {
   const [events, setEvents] = useState();
-  const domContent = useRef();
-  const scrollArea = useRef();
+
+  const [modelIndex, setModelIndex] = useState(0);
   // const onScroll = e => (state.top.current = e.target.scrollTop);
   // useEffect(() => void onScroll({ target: scrollArea.current }), []);
 
   return (
     <>
-      <Header />
       {/* R3F Canvas */}
+      {modelIndex === 0 && (
+        <button onClick={() => setModelIndex(1)}>Male</button>
+      )}
+      {modelIndex === 1 && (
+        <button onClick={() => setModelIndex(0)}>Female</button>
+      )}
 
-      <HtmlContent />
+      <HtmlContent
+        modelPath={models[modelIndex].gltf}
+        positionY={310}
+        title={models[modelIndex].title}
+      />
     </>
   );
 }
