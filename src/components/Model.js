@@ -2,8 +2,8 @@ import { useGLTFLoader } from "drei";
 import * as THREE from "three";
 import React from "react";
 
-const Model = ({ modelPath}) => {
-  let { scene } = useGLTFLoader(modelPath, true);
+const Model = ({ modelPath }) => {
+  const { scene } = useGLTFLoader(modelPath, true);
 
   //   gltf.scene.scale.set(30, 30, 30);
   scene.position.x = 0;

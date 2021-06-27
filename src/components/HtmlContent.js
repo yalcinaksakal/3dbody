@@ -1,4 +1,4 @@
-import { Html } from "drei";
+import { Html, useProgress } from "drei";
 import React, { Suspense } from "react";
 import { useRef } from "react";
 import { Canvas } from "react-three-fiber";
@@ -6,10 +6,21 @@ import { Canvas } from "react-three-fiber";
 import Lights from "./Lights";
 import Model from "./Model";
 import { Section } from "./section";
+import Spinner from "./Spinner";
 
 let isRotating = false;
 let isAutoRotating = true;
 const oldCords = { x: 0, y: 0 };
+
+function Loader() {
+  const { active, progress, errors, item, loaded, total } = useProgress();
+  return (
+    <Html center>
+      <Spinner />
+      <div className="container">{progress} % loaded</div>
+    </Html>
+  );
+}
 
 const HtmlContent = ({ modelPath, positionY, title }) => {
   const meshRef = useRef();
@@ -55,7 +66,7 @@ const HtmlContent = ({ modelPath, positionY, title }) => {
     >
       <Canvas colorManagement camera={{ position: [0, 0, 120], fov: 70 }}>
         <Lights />
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
           <Section factor={1.5} offset={1}>
             <group position={[0, 310, 0]}>
               <mesh
