@@ -13,7 +13,8 @@ let isAutoRotating = true;
 const oldCords = { x: 0, y: 0 };
 
 function Loader() {
-  const { active, progress, errors, item, loaded, total } = useProgress();
+  // const { active, progress, errors, item, loaded, total } = useProgress();
+  const { progress } = useProgress();
   return (
     <Html center>
       <Spinner />
