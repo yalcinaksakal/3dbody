@@ -1,5 +1,5 @@
 import { Html } from "drei";
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import { useRef } from "react";
 import { Canvas } from "react-three-fiber";
 // import { useFrame } from "react-three-fiber";
@@ -27,15 +27,14 @@ const HtmlContent = ({ modelPath, positionY, title }) => {
   };
 
   return (
-    <Canvas
-      colorManagement
-      camera={{ position: [0, 0, 120], fov: 70 }}
+    <div
+      style={{ width: "100vw", height: "100vh" }}
       onPointerDown={e => {
-        e.stopPropagation();
+        const { clientX: x, clientY: y } = e;
         isAutoRotating = false;
         isRotating = true;
-        oldCords.x = e.clientX;
-        oldCords.y = e.clientY;
+        oldCords.x = x;
+        oldCords.y = y;
       }}
       onPointerUp={() => {
         isRotating = false;
@@ -47,36 +46,38 @@ const HtmlContent = ({ modelPath, positionY, title }) => {
         const yDif = y - oldCords.y;
 
         Math.abs(xDif) >= Math.abs(yDif)
-          ? (meshRef.current.rotation.y += 0.05 * (xDif > 0 ? 1 : -1))
-          : (meshRef.current.rotation.x += 0.05 * (yDif > 0 ? 1 : -1));
+          ? (meshRef.current.rotation.y += 0.1 * (xDif > 0 ? 1 : -1))
+          : (meshRef.current.rotation.x += 0.1 * (yDif > 0 ? 1 : -1));
 
         oldCords.x = x;
         oldCords.y = y;
       }}
     >
-      <Lights />
-      <Suspense fallback={null}>
-        <Section factor={1.5} offset={1}>
-          <group position={[0, 310, 0]}>
-            <mesh
-              ref={meshRef}
-              position={[0, -60, 0]}
-              scale={title === "Female" ? [40, 40, 40] : [11, 11, 11]}
-              onBeforeRender={() => isAutoRotating && rotate()}
-            >
-              <Model modelPath={modelPath} />
-            </mesh>
+      <Canvas colorManagement camera={{ position: [0, 0, 120], fov: 70 }}>
+        <Lights />
+        <Suspense fallback={null}>
+          <Section factor={1.5} offset={1}>
+            <group position={[0, 310, 0]}>
+              <mesh
+                ref={meshRef}
+                position={[0, -60, 0]}
+                scale={title === "Female" ? [40, 40, 40] : [11, 11, 11]}
+                onBeforeRender={() => isAutoRotating && rotate()}
+              >
+                <Model modelPath={modelPath} />
+              </mesh>
 
-            <Html fullscreen>
-              <div className="container">
-                <h1 className="title">{title}</h1>
-                <p>Hold model to rotate it</p>
-              </div>
-            </Html>
-          </group>
-        </Section>
-      </Suspense>
-    </Canvas>
+              <Html fullscreen>
+                <div className="container">
+                  <h1 className="title">{title}</h1>
+                  <p>Drag to rotate model</p>
+                </div>
+              </Html>
+            </group>
+          </Section>
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
 export default HtmlContent;

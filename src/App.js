@@ -9,8 +9,6 @@ const models = [
 ];
 
 export default function App() {
-  const [events, setEvents] = useState();
-
   const [modelIndex, setModelIndex] = useState(0);
   // const onScroll = e => (state.top.current = e.target.scrollTop);
   // useEffect(() => void onScroll({ target: scrollArea.current }), []);

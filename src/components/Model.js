@@ -2,8 +2,9 @@ import { useGLTFLoader } from "drei";
 import * as THREE from "three";
 import React from "react";
 
-const Model = ({ modelPath }) => {
+const Model = ({ modelPath}) => {
   let { scene } = useGLTFLoader(modelPath, true);
+
   //   gltf.scene.scale.set(30, 30, 30);
   scene.position.x = 0;
   scene.position.y = 0;
@@ -13,7 +14,6 @@ const Model = ({ modelPath }) => {
   scene.position.x += scene.position.x - center.x;
   scene.position.y += scene.position.y - center.y;
   scene.position.z += scene.position.z - center.z;
-  
 
   scene.traverse(object => {
     if (object.isMesh)
@@ -24,7 +24,15 @@ const Model = ({ modelPath }) => {
       });
   });
 
-  return <primitive object={scene} dispose={null} />;
+  return (
+    <primitive
+      object={scene}
+      dispose={null}
+      onClick={e => {
+        //
+      }}
+    />
+  );
 };
 
 export default Model;
