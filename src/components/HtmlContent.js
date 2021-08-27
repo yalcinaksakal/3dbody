@@ -35,6 +35,7 @@ const HtmlContent = ({ modelPath, positionY, title }) => {
   // });
 
   const rotate = () => {
+  
     meshRef.current.rotation.y += 0.01;
   };
 
@@ -53,7 +54,7 @@ const HtmlContent = ({ modelPath, positionY, title }) => {
       }}
       onPointerMove={e => {
         if (!isRotating) return;
-        const { clientX: x, clientY: y } = e;
+        const { clientX: x, clientY: y } = e?.touches[0];
         const xDif = x - oldCords.x;
         const yDif = y - oldCords.y;
 
@@ -64,6 +65,20 @@ const HtmlContent = ({ modelPath, positionY, title }) => {
         oldCords.x = x;
         oldCords.y = y;
       }}
+      // onTouchMove={e => {
+      //   if (!isRotating) return;
+      //   console.log(e.touches[0]);
+      //   const { clientX: x, clientY: y } = e;
+      //   const xDif = x - oldCords.x;
+      //   const yDif = y - oldCords.y;
+
+      //   Math.abs(xDif) >= Math.abs(yDif)
+      //     ? (meshRef.current.rotation.y += 0.05 * (xDif > 0 ? 1 : -1))
+      //     : (meshRef.current.rotation.x += 0.05 * (yDif > 0 ? 1 : -1));
+
+      //   oldCords.x = x;
+      //   oldCords.y = y;
+      // }}
     >
       <Canvas colorManagement camera={{ position: [0, 0, 120], fov: 70 }}>
         <Lights />
